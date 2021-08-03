@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="title"><h1>Covid-19 country records</h1></div>
+        </div>
+        {% for i in result: %}
+        <div class="content">
+            <div class="card">
+                <h2>{{i["country"]}}</h2>
+                <p class="text">{{i["total"]}}</p>
+                <a href="{{url_for('covid_records', country=i['country'])}}">Read</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+<footer>
+    <p>Made with ♥️ in Indonesia.</p>
+</footer>
+</html>
